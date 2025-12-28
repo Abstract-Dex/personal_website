@@ -1,0 +1,4 @@
+# Hugo templates - don't format these
+layouts/
+themes/
+
