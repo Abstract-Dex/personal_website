@@ -1,0 +1,13 @@
+# Hugo build output (Vercel builds this)
+public/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Hugo lock file
+.hugo_build.lock
+
+# Resources cache
+resources/_gen/
+
