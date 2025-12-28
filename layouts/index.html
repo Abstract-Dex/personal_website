@@ -117,21 +117,6 @@
       </div>
     </div>
 
-    <!-- Subscribe Section -->
-    <div class="subscribe-section">
-      <p class="subscribe-text">Get new posts in your inbox</p>
-      <form
-        action="https://buttondown.email/api/emails/embed-subscribe/{{ .Site.Params.buttondownUsername }}"
-        method="post"
-        target="popupwindow"
-        onsubmit="window.open('https://buttondown.email/{{ .Site.Params.buttondownUsername }}', 'popupwindow')"
-        class="subscribe-form"
-      >
-        <input type="email" name="email" placeholder="your@email.com" required />
-        <button type="submit">Subscribe</button>
-      </form>
-    </div>
-
     {{- with .Site.Params.social }}
     <div class="social-section">{{ partial "social-icons.html" . }}</div>
     {{- end }}
