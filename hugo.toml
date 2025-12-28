@@ -19,8 +19,11 @@ pagination.pagerSize     = 10
   # Enable theme toggle (light/dark mode)
   enableThemeToggle = true
 
-  # Enable sharing buttons, if you like
-  enableSharingButtons = true
+  # Enable reading time
+  enableReadingTime = true
+
+  # Disable sharing buttons
+  enableSharingButtons = false
   
   # Show a global language switcher in the navigation bar
   enableGlobalLanguageMenu = false
