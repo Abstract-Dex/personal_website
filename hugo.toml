@@ -1,4 +1,4 @@
-baseurl      = "localhost"
+baseurl      = "https://smol-blog.vercel.app/"
 title        = "Borrowed Ideas"
 languageCode = "en-us"
 theme        = "hello-friend-ng"

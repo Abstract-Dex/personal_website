@@ -1,8 +1,7 @@
-{{ define "body" }}
-<body class="{{ if .Site.Params.backgroundImage }}background-image" style="background-image: url('{{ .Site.Params.backgroundImage }}');"{{ else }}"{{ end }}>
-{{ end }}
-
-{{ define "main" }}
+{{ define "body" }} <body class="{{ if .Site.Params.backgroundImage
+}}background-image" style="background-image: url('{{
+.Site.Params.backgroundImage }}');"{{ else }}"{{ end }}> {{ end }} {{ define
+"main" }}
 <div class="content-center homepage-custom">
   <main>
     <div class="hero-section">

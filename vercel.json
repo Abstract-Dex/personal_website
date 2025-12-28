@@ -2,10 +2,10 @@
   "build": {
     "env": {
       "HUGO_VERSION": "0.139.0"
-    }
+    },
+    "command": "curl -L https://github.com/gohugoio/hugo/releases/download/v0.139.0/hugo_extended_0.139.0_Linux-64bit.tar.gz | tar -xz && ./hugo --gc --minify"
   },
   "git": {
     "submodules": true
   }
 }
-
