@@ -1,0 +1,11 @@
+{
+  "build": {
+    "env": {
+      "HUGO_VERSION": "0.139.0"
+    }
+  },
+  "git": {
+    "submodules": true
+  }
+}
+
