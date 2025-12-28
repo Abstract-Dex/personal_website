@@ -36,6 +36,9 @@ pagination.pagerSize     = 10
   # Custom CSS
   customCSS = ["/css/custom.css"]
 
+  # Newsletter (Buttondown)
+  buttondownUsername = "borrowedideas"
+
 [taxonomies]
     category = "blog"
     tag      = "tags"
