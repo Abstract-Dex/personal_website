@@ -6,61 +6,65 @@
 }
 
 :root {
-    --bg-color: #fafafa;
-    --text-color: #222;
-    --text-secondary: #555;
-    --accent-color: #0066cc;
-    --border-color: #e0e0e0;
-    --card-bg: #ffffff;
+    --bg-color: #ffffff;
+    --text-color: #1a1a1a;
+    --text-secondary: #666;
+    --accent-color: #0070f3;
+    --border-color: #eaeaea;
+    --card-bg: #fafafa;
     --hover-bg: #f5f5f5;
+    --code-bg: #f4f4f4;
 }
 
 @media (prefers-color-scheme: dark) {
     :root {
-        --bg-color: #1a1a1a;
-        --text-color: #e0e0e0;
-        --text-secondary: #a0a0a0;
-        --accent-color: #4a9eff;
-        --border-color: #333;
-        --card-bg: #222;
-        --hover-bg: #2a2a2a;
+        --bg-color: #0a0a0a;
+        --text-color: #ededed;
+        --text-secondary: #999;
+        --accent-color: #3291ff;
+        --border-color: #222;
+        --card-bg: #111;
+        --hover-bg: #1a1a1a;
+        --code-bg: #1a1a1a;
     }
 }
 
 body {
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-    line-height: 1.7;
+    line-height: 1.6;
     color: var(--text-color);
     background-color: var(--bg-color);
-    font-size: 16px;
+    font-size: 15px;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    letter-spacing: -0.011em;
 }
 
 /* Container */
 .container {
-    max-width: 720px;
+    max-width: 680px;
     margin: 0 auto;
-    padding: 3rem 1.5rem;
+    padding: 4rem 1.5rem;
 }
 
 /* Header */
 header {
-    margin-bottom: 3rem;
-    text-align: center;
+    margin-bottom: 4rem;
 }
 
 header h1 {
-    font-size: 2.5rem;
-    font-weight: 700;
+    font-size: 2.25rem;
+    font-weight: 600;
     margin-bottom: 0.5rem;
     color: var(--text-color);
+    letter-spacing: -0.03em;
 }
 
 .subtitle {
-    font-size: 1.25rem;
+    font-size: 1.125rem;
     color: var(--text-secondary);
     font-weight: 400;
+    letter-spacing: -0.01em;
 }
 
 /* Main Content */
@@ -73,14 +77,15 @@ section {
 }
 
 h2 {
-    font-size: 1.5rem;
+    font-size: 1.25rem;
     font-weight: 600;
-    margin-bottom: 1rem;
+    margin-bottom: 1.25rem;
     color: var(--text-color);
+    letter-spacing: -0.02em;
 }
 
 h3 {
-    font-size: 1.1rem;
+    font-size: 1rem;
     font-weight: 600;
     margin-bottom: 0.5rem;
     color: var(--text-color);
@@ -89,50 +94,47 @@ h3 {
 p {
     margin-bottom: 1rem;
     color: var(--text-secondary);
+    line-height: 1.7;
 }
 
 /* Intro Section */
 .intro p {
-    font-size: 1.1rem;
-    line-height: 1.8;
+    font-size: 1.0625rem;
+    line-height: 1.75;
 }
 
 /* Tech Section */
-.tech-note {
-    font-style: italic;
-    margin-bottom: 1.5rem;
-}
-
-.tech-grid {
+.tech-logos {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 1.5rem;
-    margin-top: 1.5rem;
+    grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+    align-items: center;
+    justify-items: center;
 }
 
-.tech-category {
-    padding: 1.25rem;
-    background: var(--card-bg);
-    border: 1px solid var(--border-color);
-    border-radius: 8px;
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
+.tech-logos img {
+    width: 64px;
+    height: 64px;
+    object-fit: contain;
+    transition: transform 0.3s ease, filter 0.3s ease;
+    filter: grayscale(20%);
 }
 
-.tech-category:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+.tech-logos img:hover {
+    transform: scale(1.15);
+    filter: grayscale(0%);
 }
 
-.tech-category h3 {
-    color: var(--accent-color);
-    margin-bottom: 0.75rem;
-    font-size: 1rem;
-}
-
-.tech-category p {
-    font-size: 0.95rem;
-    line-height: 1.6;
-    margin: 0;
+/* Special handling for LangChain icon in dark mode */
+@media (prefers-color-scheme: dark) {
+    .tech-logos img.langchain-icon {
+        filter: invert(1) grayscale(20%);
+    }
+    
+    .tech-logos img.langchain-icon:hover {
+        filter: invert(1) grayscale(0%);
+    }
 }
 
 /* Links Section */
@@ -147,21 +149,20 @@ p {
     display: flex;
     align-items: center;
     gap: 0.75rem;
-    padding: 1rem 1.25rem;
-    background: var(--card-bg);
+    padding: 0.875rem 1.125rem;
+    background: transparent;
     border: 1px solid var(--border-color);
-    border-radius: 8px;
+    border-radius: 6px;
     text-decoration: none;
     color: var(--text-color);
     transition: all 0.2s ease;
     font-weight: 500;
+    font-size: 0.9375rem;
 }
 
 .link-card:hover {
-    background: var(--hover-bg);
-    transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-    border-color: var(--accent-color);
+    background: var(--card-bg);
+    border-color: var(--text-color);
 }
 
 .link-card svg {
@@ -175,14 +176,13 @@ p {
 
 /* Footer */
 footer {
-    text-align: center;
-    padding-top: 2rem;
+    padding-top: 3rem;
     border-top: 1px solid var(--border-color);
 }
 
 footer p {
     color: var(--text-secondary);
-    font-size: 0.9rem;
+    font-size: 0.875rem;
 }
 
 /* Responsive Design */
@@ -199,8 +199,14 @@ footer p {
         font-size: 1.1rem;
     }
     
-    .tech-grid {
-        grid-template-columns: 1fr;
+    .tech-logos {
+        grid-template-columns: repeat(auto-fit, minmax(60px, 1fr));
+        gap: 1.5rem;
+    }
+    
+    .tech-logos img {
+        width: 48px;
+        height: 48px;
     }
     
     .link-grid {
