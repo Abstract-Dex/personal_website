@@ -106,14 +106,16 @@ p {
 /* Tech Section */
 .tech-logos {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(64px, 1fr));
     gap: 2rem;
     margin-top: 2rem;
     align-items: center;
     justify-items: center;
+    max-width: 100%;
 }
 
-.tech-logos img {
+.tech-logos img,
+.tech-logos svg {
     width: 64px;
     height: 64px;
     object-fit: contain;
@@ -121,27 +123,23 @@ p {
     filter: grayscale(20%);
 }
 
-.tech-logos img:hover {
+.tech-logos img:hover,
+.tech-logos svg:hover {
     transform: scale(1.15);
     filter: grayscale(0%);
 }
 
-/* Special handling for LangChain icon in dark mode */
-@media (prefers-color-scheme: dark) {
-    .tech-logos img.langchain-icon {
-        filter: invert(1) grayscale(20%);
-    }
-    
-    .tech-logos img.langchain-icon:hover {
-        filter: invert(1) grayscale(0%);
-    }
+/* LangChain SVG icon styling */
+.tech-logos svg.langchain-icon {
+    color: var(--text-color);
+    cursor: pointer;
 }
 
 /* Links Section */
 .link-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-    gap: 1rem;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 0.875rem;
     margin-top: 1.5rem;
 }
 
@@ -200,11 +198,12 @@ footer p {
     }
     
     .tech-logos {
-        grid-template-columns: repeat(auto-fit, minmax(60px, 1fr));
+        grid-template-columns: repeat(auto-fill, minmax(56px, 1fr));
         gap: 1.5rem;
     }
     
-    .tech-logos img {
+    .tech-logos img,
+    .tech-logos svg {
         width: 48px;
         height: 48px;
     }
