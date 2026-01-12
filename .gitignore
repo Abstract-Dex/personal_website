@@ -1,13 +1,10 @@
-# Hugo build output (Vercel builds this)
-public/
-
-# OS files
+# macOS
 .DS_Store
-Thumbs.db
 
-# Hugo lock file
-.hugo_build.lock
+# Editor directories
+.vscode/
+.idea/
 
-# Resources cache
-resources/_gen/
-
+# Backup files
+*~
+*.bak
