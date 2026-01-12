@@ -30,14 +30,13 @@
 }
 
 body {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    font-family: 'JetBrains Mono', 'Courier New', monospace;
     line-height: 1.6;
     color: var(--text-color);
     background-color: var(--bg-color);
-    font-size: 15px;
+    font-size: 14px;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    letter-spacing: -0.011em;
 }
 
 /* Container */
@@ -53,18 +52,16 @@ header {
 }
 
 header h1 {
-    font-size: 2.25rem;
+    font-size: 2rem;
     font-weight: 600;
     margin-bottom: 0.5rem;
     color: var(--text-color);
-    letter-spacing: -0.03em;
 }
 
 .subtitle {
-    font-size: 1.125rem;
+    font-size: 1rem;
     color: var(--text-secondary);
     font-weight: 400;
-    letter-spacing: -0.01em;
 }
 
 /* Main Content */
@@ -77,11 +74,10 @@ section {
 }
 
 h2 {
-    font-size: 1.25rem;
+    font-size: 1.125rem;
     font-weight: 600;
     margin-bottom: 1.25rem;
     color: var(--text-color);
-    letter-spacing: -0.02em;
 }
 
 h3 {
@@ -99,46 +95,53 @@ p {
 
 /* Intro Section */
 .intro p {
-    font-size: 1.0625rem;
-    line-height: 1.75;
+    font-size: 0.9375rem;
+    line-height: 1.7;
 }
 
 /* Tech Section */
 .tech-logos {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(64px, 1fr));
-    gap: 2rem;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 2.5rem 2rem;
     margin-top: 2rem;
     align-items: center;
     justify-items: center;
     max-width: 100%;
 }
 
-.tech-logos img,
-.tech-logos svg {
-    width: 64px;
-    height: 64px;
+.tech-logos img {
+    width: 56px;
+    height: 56px;
     object-fit: contain;
     transition: transform 0.3s ease, filter 0.3s ease;
     filter: grayscale(20%);
 }
 
-.tech-logos img:hover,
-.tech-logos svg:hover {
+.tech-logos img:hover {
     transform: scale(1.15);
     filter: grayscale(0%);
 }
 
-/* LangChain SVG icon styling */
-.tech-logos svg.langchain-icon {
-    color: var(--text-color);
-    cursor: pointer;
+/* LangChain icon styling */
+.tech-logos img.langchain-icon {
+    filter: grayscale(20%);
+}
+
+@media (prefers-color-scheme: dark) {
+    .tech-logos img.langchain-icon {
+        filter: invert(1) grayscale(20%);
+    }
+    
+    .tech-logos img.langchain-icon:hover {
+        filter: invert(1) grayscale(0%);
+    }
 }
 
 /* Links Section */
 .link-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    grid-template-columns: repeat(3, 1fr);
     gap: 0.875rem;
     margin-top: 1.5rem;
 }
@@ -169,7 +172,7 @@ p {
 }
 
 .link-card span {
-    font-size: 0.95rem;
+    font-size: 0.875rem;
 }
 
 /* Footer */
@@ -198,12 +201,11 @@ footer p {
     }
     
     .tech-logos {
-        grid-template-columns: repeat(auto-fill, minmax(56px, 1fr));
-        gap: 1.5rem;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 2rem 1.5rem;
     }
     
-    .tech-logos img,
-    .tech-logos svg {
+    .tech-logos img {
         width: 48px;
         height: 48px;
     }
